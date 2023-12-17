@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head">
+	<title>Bemap</title>
+	<meta charset="UTF-8">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" href="styles.css">
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					colors: {
+						'tarawera': {
+							'50': '#e9ffff',
+							'100': '#c9ffff',
+							'200': '#99fcff',
+							'300': '#54f7ff',
+							'400': '#07e7ff',
+							'500': '#00c9ef',
+							'600': '#009fc9',
+							'700': '#007ea1',
+							'800': '#086582',
+							'900': '#0c536d',
+							'950': '#003d55',
+						},
+					},
+
+				},
+			},
+		}
+	</script>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet" />
+</head>
+
+<body>
+	<div th:fragment="menu">
+		<header class="bg-sky-950 py-5 rounded-b-2xl mx-10 shadow-xl shadow-slate-600">
+
+			<div class='grid grid-cols-2 place-content-evenly'>
+				<div class='flex flex-wrap ms-5'>
+					<a href="http://vpn.bemap.one" class='self-center imglogo mx-5'>
+						<img src="LogoBemap_1.png">
+					</a>
+					<p class='text-white text-4xl font-bold font-Russo self-center customGroup1'>
+						BEMAP
+					</p>
+				</div>
+				<div class='flex items-center justify-center text-2xl'>
+					<a th:href="@{/}"
+						class='self-center bg-rose-700 rounded-2xl text-white shadow-xl hover:shadow-white/70 hover:bg-rose-600 focus:bg-green-600 focus:shadow-white/70 p-4 font-Russo font-bold mx-8'>INICIO</a>
+					<a th:href='@{/Sensores}'
+						class='self-center bg-rose-700 rounded-2xl text-white shadow-xl hover:shadow-white/70 hover:bg-rose-600 focus:bg-green-600 focus:shadow-white/70 p-4 font-Russo font-bold mx-8'>ADMIN</a>
+					<a href='#'
+						class='self-center bg-rose-700 rounded-2xl text-white shadow-xl hover:shadow-white/70 hover:bg-rose-600 focus:bg-green-600 focus:shadow-white/70 p-4 font-Russo font-bold mx-8'>SENSORES</a>
+					<a href='#'
+						class='self-center bg-rose-700 rounded-2xl text-white shadow-xl hover:shadow-white/70 hover:bg-rose-600 focus:bg-green-600 focus:shadow-white/70 p-4 font-Russo font-bold mx-8'>DATOS</a>
+				</div>
+
+			</div>
+		</header>
+	</div>
+</body>
+
+</html>

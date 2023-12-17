@@ -1,0 +1,19 @@
+@charset "ISO-8859-1";
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+.imglogo{
+	width: 45px;
+	height: 45px;
+}
+
+.customGroup1{
+    margin: 0;
+    top: 10%;
+    position: relative;
+}
+
+.font-Russo{
+	font-family: 'Russo One', sans-serif;
+}
+
+	

@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<head th:replace="fragmentos/header :: head"></head>
+<body>
+	<div th:insert="/fragmentos/header :: menu"> </div>
+	<br>
+	<div class="container mt-4">
+		<br>
+		<div class="card">
+		  <div class="card-header">
+		    Agregar Sensor
+		  </div>
+		  <div class="card-body">
+		    <h5 class="card-title">Llene los datos del formulario</h5>
+		    <form th:action="@{/guardarSensor}" th:object="${sensor}" method="POST">
+			  <div class="form-group">
+			    <label for="exampleInput1">ID</label>
+			    <input type="text" th:field="*{id}" class="form-control" placeholder="1">
+			  </div>
+			  <div class="form-group">
+			    <label for="exampleInput1">Modelo</label>
+			    <input type="text" th:field="*{modelo}" class="form-control" placeholder="MQ-135">
+			  </div>
+			  <div class="form-group">
+			    <label for="exampleInput1">Valor</label>
+			    <input type="text" th:field="*{valor}" class="form-control" placeholder="350 ppm">
+			  </div>
+			  <div class="form-group">
+			    <label for="exampleInput1">Latitud</label>
+			    <input type="text" th:field="*{latitud}" class="form-control" placeholder="123.4">
+			  </div>
+			  <div class="form-group">
+			    <label for="exampleInput1">Longitud</label>
+			    <input type="text" th:field="*{longitud}" class="form-control" placeholder="789.0">
+			  </div>
+			  <div class="form-group">
+			    <label for="exampleInput1">Fecha</label>
+			    <input type="text" th:field="*{fecha}" class="form-control" placeholder="10-12-2023 19:00:00">
+			  </div>
+			  <button type="submit" class="btn btn-primary">Guardar</button>
+			  <a href="/listarSensores" class="btn btn-primary active" role="button" aria-pressed="true">Cancelar</a>
+			</form>
+		  </div>
+		</div>
+	</div>
+</body>
+</html>

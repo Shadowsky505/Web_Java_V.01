@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<head th:replace="fragmentos/header :: head"></head>
+<body>
+	<div th:insert="/fragmentos/header :: menu"> </div>
+	<br>
+	<div class="container mt-4">
+		<a th:href="@{/agregarSensor}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Agregar</a>
+		<br>
+		<table class="table">
+		  <thead>
+		    <tr>
+		      <th scope="col">ID</th>
+		      <th scope="col">MODELO</th>
+		      <th scope="col">VALOR</th>
+		      <th scope="col">LATITUD</th>
+		      <th scope="col">LONGITUD</th>
+		      <th scope="col">FECHA</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr th:each="sensor : ${sensores}">
+		      <th th:text="${sensor.id}" scope="row"></th>
+		      <td th:text="${sensor.modelo}"></td>
+		      <td th:text="${sensor.valor}"></td>
+		      <td th:text="${sensor.latitud}"></td>
+		      <td th:text="${sensor.longitud}"></td>
+		      <td th:text="${#dates.format(sensor.fecha, 'dd-MM-yyyy HH:mm:ss')}"></td>
+		      <td>
+		      	<a href="@{/editarSensor/}+${sensor.id}" class="btn btn-success">Editar</a>
+		      	<a href="#" class="btn btn-danger">Eliminar</a>
+		      </td>
+		    </tr>
+		  </tbody>
+		</table>
+	</div>
+	<script src="funciones.js"></script>
+</body>
+</html>
